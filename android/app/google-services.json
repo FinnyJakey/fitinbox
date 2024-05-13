@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "969305170934",
+    "project_id": "fit-inbox",
+    "storage_bucket": "fit-inbox.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:969305170934:android:96f2a84a8c9ca54cf19dd7",
+        "android_client_info": {
+          "package_name": "com.finnyjakey.fitinbox"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCjTnlXBrdeXyaTuzLOh6vGrVaWDkzBwlo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
