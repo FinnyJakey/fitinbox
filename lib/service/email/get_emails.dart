@@ -6,11 +6,9 @@ Future<Map<String, dynamic>> getEmails() async {
     final documentRef = FirebaseFirestore.instance.collection('emails').doc(AuthService.uuid);
     final documentData = (await documentRef.get()).data()!;
 
-    final List<dynamic> emailList = documentData["emails"];
-
     return {
       "result": true,
-      "data": emailList.reversed.toList(),
+      "data": documentData,
     };
   } catch (e) {
     return {

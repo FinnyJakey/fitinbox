@@ -29,7 +29,7 @@ class _SplashViewState extends State<SplashView> {
   }
 
   Future<bool> _getLoginNeed() async {
-    // return true;
+    return true;
 
     final String id = AuthService.id;
     final String pw = AuthService.pw;

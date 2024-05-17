@@ -6,17 +6,11 @@ Future<Map<String, dynamic>> getUser() async {
     final documentRef = FirebaseFirestore.instance.collection('users').doc(AuthService.uuid);
     final documentData = (await documentRef.get()).data()!;
 
-    String emailName = documentData["email"].split("@")[0];
-    String recipient = documentData["recipient"];
-    num forwardScore = documentData["forwardScore"];
+    final List<dynamic> accounts = documentData["accounts"];
 
     return {
       "result": true,
-      "data": {
-        "emailName": emailName,
-        "recipient": recipient,
-        "forwardScore": forwardScore,
-      },
+      "data": accounts,
     };
   } catch (e) {
     return {

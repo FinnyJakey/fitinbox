@@ -1,7 +1,6 @@
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:fitinbox/service/notification/notification_handler.dart';
 import 'package:fitinbox/views/email/email_view.dart';
-import 'package:fitinbox/views/filter/filter_view.dart';
 import 'package:fitinbox/views/user/user_view.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -15,23 +14,20 @@ class BottomTabView extends StatefulWidget {
 }
 
 class _BottomTabViewState extends State<BottomTabView> {
-  final List<String> _tabBarTitleList = ['Email', 'Filter', 'User'];
+  final List<String> _tabBarTitleList = ['Email', 'User'];
 
   final List<String> _tabBarImageActivePathList = [
     'assets/svg/tab/home-on.svg',
-    'assets/svg/tab/record-on.svg',
     'assets/svg/tab/profile-on.svg',
   ];
 
   final List<String> _tabBarImageInActivePathList = [
     'assets/svg/tab/home-off.svg',
-    'assets/svg/tab/record-off.svg',
     'assets/svg/tab/profile-off.svg',
   ];
 
   final List<Widget> _widgetOptions = <Widget>[
     const EmailView(),
-    const FilterView(),
     const UserView(),
   ];
 
@@ -60,7 +56,7 @@ class _BottomTabViewState extends State<BottomTabView> {
         activeColor: const Color(0XFF222222),
         border: const Border(top: BorderSide(color: Colors.white, width: 0.0)),
         backgroundColor: Colors.white,
-        items: List.generate(3, (int index) {
+        items: List.generate(2, (int index) {
           return BottomNavigationBarItem(
             activeIcon: SvgPicture.asset(
               _tabBarImageActivePathList[index],

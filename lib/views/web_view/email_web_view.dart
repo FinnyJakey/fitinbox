@@ -27,6 +27,9 @@ class _EmailWebViewState extends State<EmailWebView> {
   @override
   void initState() {
     super.initState();
+
+    String meta = '<meta name="viewport" content="width=device-width, initial-scale=1.0" />';
+
     _webViewController.setJavaScriptMode(JavaScriptMode.unrestricted);
     _webViewController.setNavigationDelegate(NavigationDelegate(
       onPageStarted: (url) {
@@ -39,8 +42,9 @@ class _EmailWebViewState extends State<EmailWebView> {
         _currentProgressNotifier.value = 100;
       },
     ));
+    _webViewController.setUserAgent("'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Mobile Safari/537.36'");
     _webViewController.setBackgroundColor(Colors.white);
-    _webViewController.loadHtmlString(widget.html);
+    _webViewController.loadHtmlString(meta + widget.html);
   }
 
   @override
