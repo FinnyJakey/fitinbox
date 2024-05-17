@@ -1,6 +1,5 @@
 import 'package:fitinbox/service/email/get_emails.dart';
 import 'package:fitinbox/service/user/get_email_name.dart';
-import 'package:fitinbox/service/user/get_user.dart';
 import 'package:fitinbox/views/web_view/email_web_view.dart';
 import 'package:fitinbox/widgets/email_preview.dart';
 import 'package:flutter/cupertino.dart';
@@ -88,6 +87,7 @@ class _EmailViewState extends State<EmailView> {
               border: const Border(),
               largeTitle: const Text("Emails"),
               trailing: PopupMenuButton<MenuType>(
+                icon: const Icon(Icons.sort_outlined),
                 color: Colors.white,
                 onSelected: (MenuType result) {
                   sortEmails(menuType: result);

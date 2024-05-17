@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:fitinbox/service/utils.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 Widget emailPreview({required dynamic email, required void Function() onPressed}) {
   return CupertinoButton(
@@ -32,15 +33,16 @@ Widget emailPreview({required dynamic email, required void Function() onPressed}
                           color: Colors.grey.shade400,
                         ),
                         const SizedBox(width: 2),
-                        Text(
-                          getFromText(from: jsonDecode(email["metadata"])["Records"][0]["ses"]["mail"]["commonHeaders"]["from"][0]),
-                          style: const TextStyle(
-                            color: Colors.black,
-                            fontSize: 16.0,
-                            fontWeight: FontWeight.w700,
+                        Expanded(
+                          child: Text(
+                            getFromText(from: jsonDecode(email["metadata"])["Records"][0]["ses"]["mail"]["commonHeaders"]["from"][0]),
+                            style: const TextStyle(
+                              color: Colors.black,
+                              fontSize: 16.0,
+                              fontWeight: FontWeight.w700,
+                            ),
                           ),
                         ),
-                        const Spacer(),
                         Text(
                           getElapsedTime((email["createdAt"].toDate())),
                           style: const TextStyle(
@@ -84,7 +86,7 @@ Widget emailPreview({required dynamic email, required void Function() onPressed}
   );
 }
 
-Widget importanceWidget({required String reason, required double score}) {
+Widget importanceWidget({required String reason, required num score}) {
   return Row(
     children: [
       CircleAvatar(
@@ -103,13 +105,13 @@ Widget importanceWidget({required String reason, required double score}) {
   );
 }
 
-Color importanceColor({required double score}) {
+Color importanceColor({required num score}) {
   if (score >= 7.5 && score <= 10.0) {
     return Colors.red;
   }
 
   if (score >= 5.0 && score <= 7.4) {
-    return Colors.deepOrangeAccent;
+    return Colors.deepOrangeAccent.withOpacity(0.8);
   }
 
   if (score >= 2.5 && score <= 4.9) {

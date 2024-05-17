@@ -3,7 +3,6 @@ import 'package:fitinbox/service/notification/notification_setup.dart';
 import 'package:fitinbox/service/singleton/auth_service.dart';
 import 'package:fitinbox/views/auth/auth_view.dart';
 import 'package:fitinbox/views/bottom_tab_view.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
