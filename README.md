@@ -1,16 +1,34 @@
-# fitinbox
+## 프로젝트 수행 목적
 
-A new Fit-Inbox project.
+### (1) 프로젝트 정의
 
-## Getting Started
+수신한 이메일을 LLM을 통해 개인에게 맞추어 필터링하고 지정된 이메일 주소로 전달해주는 서비스
 
-This project is a starting point for a Flutter application.
+### (2) 프로젝트 배경
 
-A few resources to get you started if this is your first Flutter project:
+오늘날 이메일은 업무 및 개인 생활에서 핵심적인 의사소통 도구로 사용되고 있다.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+그러나 빠르게 증가하는 이메일의 양과 다양한 종류의 메시지들로 인해 혼란스럽고 효율적인 관리가 어려워지고 있다.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+따라서 사용자가 중요한 이메일을 빠르게 식별하고 효율적으로 관리할 수 있는 개인화된 서비스를 제공하려고 한다.
+
+### (3) 프로젝트 목표
+
+1. 이메일 서버 구축
+    1. AWS의 Simple Email Service를 통해 비교적 간단하고 빠르게 이메일 서버 구축
+    2. fitinbox 관련 도메인 구입 및 이메일 서버에 활용
+2. AWS Lambda를 이용해 이메일 수신 트리거, 발신 기능 작성
+    1. 이메일 수신 트리거 → GPT를 통해 메일 필터링
+    2. 발신 기능 → 사용자 주소 지정 이메일 전달
+3. Cloud Function을 이용해 OpenAI API 연동 및 프롬프팅
+4. FCM을 통해 Push 서비스 제공
+
+## 프로젝트 결과물의 개요
+
+### (1) 프로젝트 구조
+
+![47조_이미지_주요 적용 기술 및 구조.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b0699698-3934-4ac5-b1ab-208b299d74bd/b6fb74d4-a009-4334-9d0a-99a9a7a4f529/47%E1%84%8C%E1%85%A9_%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5_%E1%84%8C%E1%85%AE%E1%84%8B%E1%85%AD_%E1%84%8C%E1%85%A5%E1%86%A8%E1%84%8B%E1%85%AD%E1%86%BC_%E1%84%80%E1%85%B5%E1%84%89%E1%85%AE%E1%86%AF_%E1%84%86%E1%85%B5%E1%86%BE_%E1%84%80%E1%85%AE%E1%84%8C%E1%85%A9.png)
+
+### (2) 결과물
+
+![47조_이미지_작품 소개 사진.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b0699698-3934-4ac5-b1ab-208b299d74bd/5e174325-b41e-4d46-91a9-6b602e492790/47%E1%84%8C%E1%85%A9_%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5_%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%91%E1%85%AE%E1%86%B7_%E1%84%89%E1%85%A9%E1%84%80%E1%85%A2_%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB.png)
